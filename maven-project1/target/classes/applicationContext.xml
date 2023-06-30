@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1.导入spring的坐标spring-context，对应的版本是5.2.10RELEASE-->
+
+    <!--2.配置bean-->
+    <!--bean标签标示配置bean
+    id属性标示给bean起名字
+    class属性表示给bean定义类型-->
+
+
+    <!--方法一：构造的方法实例化bean-->
+    <!--<bean id="XXXX" class="XXXX"/>-->
+
+    <!--方法二：使用静态方法实例化bean-->
+    <bean id="orderDao" class="factory.OrderDaoFactory" factory-method="getOrderDao"/>
+
+</beans>

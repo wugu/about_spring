@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1.导入spring的坐标spring-context，对应的版本是5.2.10RELEASE-->
+
+    <!--2.配置bean-->
+    <!--bean标签标示配置bean
+    id属性标示给bean起名字
+    class属性表示给bean定义类型-->
+
+    <!--bean的初始化和销毁
+    <bean id="orderDao" class="factory.OrderDaoFactory" init-method="init" destroy-method="destory"/>-->
+
+    <!--方法一：构造的方法实例化bean-->
+    <!--<bean id="XXXX" class="XXXX"/>-->
+
+    <!--方法二：使用静态方法实例化bean-->
+    <bean id="orderDao" class="factory.OrderDaoFactory" factory-method="getOrderDao"/>
+
+    <!--方式三：通过实例化工厂实例化bean-->
+<!--    <bean id="实例工厂" class="实例工厂的地址"/>-->
+<!--    <bean id="xxxx" factory-method="方法" factory-bean="实例工厂"/>-->
+
+    <!--方式四：使用FactoryBean实例化bean-->
+    <bean id="userDao" class="factory.UserDaoFactoryBean"/>
+</beans>
