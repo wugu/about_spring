@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="xxxx" class="xxx">
+        <constructor-arg name="构造函数中形参的名" ref="xxx"/>
+    </bean>-->
+
+    <bean id="bookDao" class="com.it.dao.impl.BookDaoImpl"/>
+     <!--自动装配按类型   按类型装配必须按照类型匹配唯一   主要采用按类型方法实现自动装配-->
+    <!--<bean id="bookService" class="service.impl.BookServiceImpl" autowire="byType"/>-->
+
+    <!--按名称可以实现多个id-->
+    <bean id="bookService" class="service.impl.BookServiceImpl" autowire="byName"/>
+</beans>
